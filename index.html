@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-forms</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto';
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1440px;
+            height: 700px;
+            background-color: #E5E5E5;
+            margin: auto;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 1170px;
+            height: 590px;
+        }
+
+        .left_container {
+            width: 570px;
+            height: 590px;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 35px 34px 16px 34px;
+            margin-right: 30px;
+        }
+
+        h1 {
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left_container form .user_dtl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        form .user_dtl .input_box input {
+            width: 245px;
+            height: 38px;
+            border-radius: 6px;
+            border-color: #E4E4E4;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #545454;
+            margin-bottom: 7px;
+        }
+
+        form .user_dtl .input_eml input {
+            width: 500px;
+            height: 38px;
+            border-radius: 6px;
+            border-color: #E4E4E4;
+        }
+
+        input:focus {
+            outline-color: #007BFF;
+            transition: all 0.3s ease;
+        }
+
+        form .user_dtl .input_eml p {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: -0.1px;
+            color: #969696;
+            margin-top: 7px;
+            margin-bottom: 20px;
+        }
+
+        form .gender_dtl .category{
+            display: flex;
+            width: 80%;
+        }
+
+        .gender_dtl .category label {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender_dtl .category .dot {
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            border-radius: 50%;
+            margin-right: 5px;
+            border: 1px solid;
+            border-color: #E4E4E4;
+        }
+
+        #dot-1:checked ~ .category label .one,
+        #dot-2:checked ~ .category label .two {
+            border: 7px solid;
+            border-color: #007BFF;
+        }
+
+        form input[type="radio"] {
+            display: none;
+        }
+
+        .gender_dtl label .gender {
+            margin-right: 21px;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+        }
+
+        .gender_dtl {
+            margin-bottom: 20px;
+        }
+
+        .user_resd {
+            display: flex;
+        }
+     
+        .user_resd .select {
+            width: 245px;
+            height: 38px;
+            border-radius: 5px;
+            margin-right: 10px;
+            border-color: #E4E4E4;
+        }
+
+        .user_resd .input_box .input_city {
+            width: 245px;
+            height: 38px;
+            border-radius: 5px;
+            border-color: #E4E4E4;
+
+        }
+
+        .left_button .left_btn{
+            width: 500px;
+            height: 38px;
+            background-color: #007BFF;
+            border-radius: 5px;
+            color: #fff;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .left_button p {
+            text-align: center;
+            margin-top: 22px;
+            color: #969696;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .last_title {
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 2px solid;
+            border-color: #E4E4E4;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .last_ttl {
+            margin-right: 20px;
+        }
+
+        .right_container {
+            width: 570px;
+            height: 590px;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 35px 34px 16px 34px;
+        }
+
+        .profile_img {
+            display: flex;
+        }
+
+        .castom-input {
+            width: 138px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        .castom-input input {
+            width: 138px;
+            height: 30px;
+            border-radius: 5px;
+            border-color: #E4E4E4;
+        }
+
+        .castom-input {
+            position: relative;
+        }
+
+        .castom-input:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 9px;
+                margin: auto 0;
+                width: 16px;
+                height: 16px;
+                background: url('https://raw.githubusercontent.com/MarkMark1231/HWnewforms/main/Photo%20Camera.png') no-repeat;
+                background-size: cover;
+                cursor: pointer;
+            }
+        
+            .profile_img form p {
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 18px;
+                letter-spacing: -0.1px;
+                color: #969696;
+                margin-left: 20px;
+                margin-top: 9px;
+            }
+
+            .img_rst {
+                width: 30px;
+                height: 30px;
+                border: 1px solid;
+                border-radius: 6px;
+                background-color: #fff;
+                border-color: #E4E4E4;
+            }
+
+            .castom-btn {
+                position: relative;
+            }
+
+            .castom-btn:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 55px;
+                right: 7px;
+                margin: auto 0;
+                width: 16px;
+                height: 16px;
+                background: url('https://raw.githubusercontent.com/MarkMark1231/HWnewforms/main/Trash.png') no-repeat;
+                background-size: cover;
+                cursor: pointer;
+            }
+
+            .user_leftinfo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .user_leftinfo .input_box input {
+                width: 245px;
+                height: 38px;
+                border-radius: 6px;
+                border-color: #E4E4E4;
+            }
+
+            .user_leftinfo .input_box h3 {
+                margin-top: 20px;
+            }
+
+            .user_leftinfo .input_box .select {
+            width: 245px;
+            height: 38px;
+            border-radius: 5px;
+            margin-right: 10px;
+            border-color: #E4E4E4;
+        }
+
+        .right_upd {
+            width: 150px;
+            height: 38px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left_container">
+            <div class="title"> <h1>Create an Account</h1></div>
+            <form action="#">
+                <div class="user_dtl">
+                    <div class="input_box">
+                        <h3>First Name</h3>
+                        <input type="text" required>
+                    </div>
+                    <div class="input_box">
+                        <h3>Last Name</h3>
+                        <input type="text" required>
+                    </div>
+                    <div class="input_eml">
+                        <h3>E-mail</h3>
+                        <input class="inp_eml" type="email" required>
+                        <p>We'll never share your email with anyone else.</p>
+                    </div>
+                </div>
+
+                <div class="gender_dtl">
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="user_resd">
+                    <div class="input_box">
+                        <h3>Country</h3>
+                        <select name="select-country" id="" class="select">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+
+                    <div class="input_box">
+                        <h3>City</h3>
+                        <input type="text" required class="input_city">
+                    </div>
+                </div>
+
+                <div class="left_button">
+                    <input type="submit" value="Sign Up" class="left_btn">
+                    <p>By clicking the 'Sign Up' button, you confirm that you accept our <br><a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+                </div>
+
+                <div class="last_title">
+                    <div class="last_ttl"><h3>Have an account?</h3></div>
+                    <div><h3><a href="#"><strong>Log In</strong></a></h3></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="right_container">
+            <div class="title"><h1>Profile</h1></div>
+            <div class="profile_img">
+                <div><img src="https://raw.githubusercontent.com/MarkMark1231/HWnewforms/main/%F0%9F%93%B7%20Image.png" alt="" width="80" height="80"></div>
+                <form action="#" class="img_form">
+                    <div class="castom-input">
+                        <input type="text">
+                    </div>
+                    <p>Up to 1 MB (300x300 px)</p>
+                </form>
+                <div class="castom-btn">
+                    <button class="img_rst"></button>
+                </div>
+            </div>
+            <form action="">
+                <div class="user_leftinfo">
+                <div class="input_box">
+                        <h3>Name</h3>
+                        <input type="text" required>
+                </div>
+                <div class="input_box">
+                        <h3>E-mail</h3>
+                        <input type="text" required>
+                </div>
+                <div class="input_box">
+                        <h3>Country</h3>
+                        <select name="select-country" id="" class="select">
+                            <option value="">Select</option>
+                        </select>
+                </div>
+                <div class="input_box">
+                        <h3>City</h3>
+                        <input type="text" required>
+                </div>
+                <div class="input_box">
+                        <h3>Zip Code</h3>
+                        <input type="text" required>
+                </div>
+                <div class="input_box">
+                        <h3>Phone Number</h3>
+                        <input type="text" required>
+                </div>
+            </div>
+
+            <button type="submit" class="right_upd">Update</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
